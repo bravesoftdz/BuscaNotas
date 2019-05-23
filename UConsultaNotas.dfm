@@ -3,7 +3,7 @@ object frmConsultaNotas: TfrmConsultaNotas
   Top = 92
   Width = 1030
   Height = 345
-  Caption = 'Busca Notas na Receita    (Vers'#227'o 1.0.8   14/03/2018)'
+  Caption = 'Busca Notas na Receita    (Vers'#227'o 1.0.9   23/05/2019)'
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
@@ -42,7 +42,7 @@ object frmConsultaNotas: TfrmConsultaNotas
   object NxPanel1: TNxPanel
     Left = 0
     Top = 0
-    Width = 1014
+    Width = 1022
     Height = 34
     Align = alTop
     BorderPen.Style = psClear
@@ -77,7 +77,7 @@ object frmConsultaNotas: TfrmConsultaNotas
   object NxPanel2: TNxPanel
     Left = 0
     Top = 34
-    Width = 1014
+    Width = 1022
     Height = 56
     Align = alTop
     ColorScheme = csBlue2010

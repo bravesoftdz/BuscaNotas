@@ -3,7 +3,6 @@ program BuscaNotas;
 uses
   Forms,
   UConsultaNotas in 'UConsultaNotas.pas' {frmConsultaNotas},
-  uNFeConsts in '..\NFe 3.10\NFESrv\uNFeConsts.pas',
   DmdDatabase in 'DmdDatabase.pas' {dmDatabase: TDataModule},
   UDMCadFilial in 'UDMCadFilial.pas' {DMCadFilial: TDataModule},
   UCadFilial in 'uCadFilial.pas' {frmCadFilial},
@@ -15,7 +14,8 @@ uses
   UDMConsultaNotas in 'UDMConsultaNotas.pas' {DMConsultaNotas: TDataModule},
   USel_Filial in 'USel_Filial.pas' {frmSel_Filial},
   uUtilPadrao in 'uUtilPadrao.pas',
-  uNFeComandos in '..\NFe 4.00\uNFeComandos.pas';
+  uNFeComandos in '..\ssfacil\uNFeComandos.pas',
+  uNFeConsts in '..\ssfacil\uNFeConsts.pas';
 
 {$R *.res}
 
