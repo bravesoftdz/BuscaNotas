@@ -87,8 +87,8 @@ object DMConsultaNotas: TDMConsultaNotas
       'SELECT *'
       'FROM PARAMETROS')
     SQLConnection = dmDatabase.scoDados
-    Left = 320
-    Top = 96
+    Left = 321
+    Top = 97
     object qParametrosID: TIntegerField
       FieldName = 'ID'
       Required = True
