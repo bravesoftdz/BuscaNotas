@@ -22,8 +22,8 @@ object frmCadContador: TfrmCadContador
   object RzPageControl1: TRzPageControl
     Left = 0
     Top = 0
-    Width = 838
-    Height = 591
+    Width = 846
+    Height = 598
     ActivePage = TS_Cadastro
     ActivePageDefault = TS_Consulta
     Align = alClient
@@ -41,8 +41,8 @@ object frmCadContador: TfrmCadContador
       object SMDBGrid1: TSMDBGrid
         Left = 0
         Top = 67
-        Width = 834
-        Height = 484
+        Width = 842
+        Height = 491
         Align = alClient
         Ctl3D = True
         DataSource = DMCadContador.dsContador
@@ -74,7 +74,7 @@ object frmCadContador: TfrmCadContador
         WidthOfIndicator = 11
         DefaultRowHeight = 17
         ScrollBars = ssHorizontal
-        ColCount = 7
+        ColCount = 4
         RowCount = 2
         Columns = <
           item
@@ -94,39 +94,17 @@ object frmCadContador: TfrmCadContador
           end
           item
             Expanded = False
-            FieldName = 'NOME_INTERNO'
-            Title.Alignment = taCenter
-            Title.Caption = 'Fantasia'
-            Visible = True
-          end
-          item
-            Expanded = False
             FieldName = 'CNPJ_CPF'
             Title.Alignment = taCenter
             Title.Caption = 'CNPJ/CPF'
             Width = 113
-            Visible = True
-          end
-          item
-            Expanded = False
-            FieldName = 'DDD1'
-            Title.Alignment = taCenter
-            Title.Caption = 'DDD'
-            Width = 39
-            Visible = True
-          end
-          item
-            Expanded = False
-            FieldName = 'FONE'
-            Title.Alignment = taCenter
-            Title.Caption = 'Fone'
             Visible = True
           end>
       end
       object Panel2: TPanel
         Left = 0
         Top = 0
-        Width = 834
+        Width = 842
         Height = 33
         Align = alTop
         Color = clSilver
@@ -354,8 +332,8 @@ object frmCadContador: TfrmCadContador
       end
       object StaticText1: TStaticText
         Left = 0
-        Top = 551
-        Width = 834
+        Top = 558
+        Width = 842
         Height = 17
         Align = alBottom
         BorderStyle = sbsSunken
@@ -371,7 +349,7 @@ object frmCadContador: TfrmCadContador
       object pnlPesquisa: TPanel
         Left = 0
         Top = 33
-        Width = 834
+        Width = 842
         Height = 34
         Align = alTop
         TabOrder = 3
@@ -471,7 +449,7 @@ object frmCadContador: TfrmCadContador
       object Panel1: TPanel
         Left = 0
         Top = 0
-        Width = 834
+        Width = 842
         Height = 35
         Align = alTop
         Color = 8404992
@@ -697,8 +675,8 @@ object frmCadContador: TfrmCadContador
       object RzPageControl2: TRzPageControl
         Left = 0
         Top = 35
-        Width = 834
-        Height = 533
+        Width = 842
+        Height = 540
         ActivePage = TS_Dados
         ActivePageDefault = TS_Dados
         Align = alClient
@@ -724,13 +702,21 @@ object frmCadContador: TfrmCadContador
             Alignment = taRightJustify
             Caption = 'ID:'
           end
-          object Label3: TLabel
-            Left = 72
+          object Label10: TLabel
+            Left = 59
             Top = 59
-            Width = 23
+            Width = 38
             Height = 13
             Alignment = taRightJustify
-            Caption = 'CPF:'
+            Caption = 'Pessoa:'
+          end
+          object Label9: TLabel
+            Left = 312
+            Top = 59
+            Width = 55
+            Height = 13
+            Alignment = taRightJustify
+            Caption = 'CNPJ/CPF:'
           end
           object DBEdit7: TDBEdit
             Left = 98
@@ -755,17 +741,37 @@ object frmCadContador: TfrmCadContador
             ReadOnly = True
             TabOrder = 0
           end
-          object DBEdit2: TDBEdit
+          object RxDBComboBox1: TRxDBComboBox
             Left = 98
+            Top = 52
+            Width = 124
+            Height = 21
+            Style = csDropDownList
+            DataField = 'PESSOA'
+            DataSource = DMCadContador.dsContador
+            DropDownCount = 3
+            EnableValues = True
+            ItemHeight = 13
+            Items.Strings = (
+              'Jur'#237'dica (CNPJ)'
+              'F'#237'sica (CPF)')
+            TabOrder = 2
+            Values.Strings = (
+              'J'
+              'F')
+            OnExit = RxDBComboBox1Exit
+          end
+          object DBEdit6: TDBEdit
+            Left = 369
             Top = 51
-            Width = 201
+            Width = 139
             Height = 21
             CharCase = ecUpperCase
             DataField = 'CPF'
             DataSource = DMCadContador.dsContador
-            TabOrder = 2
-            OnEnter = RxDBComboBox8Change
-            OnExit = DBEdit2Exit
+            TabOrder = 3
+            OnEnter = DBEdit6Enter
+            OnExit = DBEdit6Exit
           end
         end
       end

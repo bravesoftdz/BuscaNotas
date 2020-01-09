@@ -23,9 +23,13 @@ object DMCadContador: TDMCadContador
       FieldName = 'NOME'
       Size = 70
     end
+    object sdsContadorPESSOA: TStringField
+      FieldName = 'PESSOA'
+      Size = 1
+    end
     object sdsContadorCPF: TStringField
       FieldName = 'CPF'
-      Size = 14
+      Size = 18
     end
   end
   object dspContador: TDataSetProvider
@@ -40,8 +44,8 @@ object DMCadContador: TDMCadContador
     IndexFieldNames = 'ID'
     Params = <>
     ProviderName = 'dspContador'
-    Left = 208
-    Top = 32
+    Left = 209
+    Top = 33
     object cdsContadorID: TIntegerField
       FieldName = 'ID'
       ProviderFlags = [pfInUpdate, pfInWhere, pfInKey]
@@ -51,9 +55,13 @@ object DMCadContador: TDMCadContador
       FieldName = 'NOME'
       Size = 70
     end
+    object cdsContadorPESSOA: TStringField
+      FieldName = 'PESSOA'
+      Size = 1
+    end
     object cdsContadorCPF: TStringField
       FieldName = 'CPF'
-      Size = 14
+      Size = 18
     end
   end
   object dsContador: TDataSource

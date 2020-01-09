@@ -22,9 +22,9 @@ object frmCadFilial: TfrmCadFilial
   object RzPageControl1: TRzPageControl
     Left = 0
     Top = 0
-    Width = 838
-    Height = 590
-    ActivePage = TS_Cadastro
+    Width = 846
+    Height = 598
+    ActivePage = TS_Consulta
     ActivePageDefault = TS_Consulta
     Align = alClient
     BackgroundColor = 16752448
@@ -32,7 +32,7 @@ object frmCadFilial: TfrmCadFilial
     FlatColor = clGray
     ParentBackgroundColor = False
     TabColors.Shadow = clSilver
-    TabIndex = 1
+    TabIndex = 0
     TabOrder = 0
     OnChange = RzPageControl1Change
     FixedDimension = 19
@@ -41,8 +41,8 @@ object frmCadFilial: TfrmCadFilial
       object SMDBGrid1: TSMDBGrid
         Left = 0
         Top = 67
-        Width = 834
-        Height = 483
+        Width = 842
+        Height = 491
         Align = alClient
         Ctl3D = True
         DataSource = DMCadFilial.dsFilial
@@ -120,13 +120,14 @@ object frmCadFilial: TfrmCadFilial
             FieldName = 'FONE'
             Title.Alignment = taCenter
             Title.Caption = 'Fone'
+            Width = 64
             Visible = True
           end>
       end
       object Panel2: TPanel
         Left = 0
         Top = 0
-        Width = 834
+        Width = 842
         Height = 33
         Align = alTop
         Color = clSilver
@@ -354,8 +355,8 @@ object frmCadFilial: TfrmCadFilial
       end
       object StaticText1: TStaticText
         Left = 0
-        Top = 550
-        Width = 834
+        Top = 558
+        Width = 842
         Height = 17
         Align = alBottom
         BorderStyle = sbsSunken
@@ -371,7 +372,7 @@ object frmCadFilial: TfrmCadFilial
       object pnlPesquisa: TPanel
         Left = 0
         Top = 33
-        Width = 834
+        Width = 842
         Height = 34
         Align = alTop
         TabOrder = 3
@@ -471,7 +472,7 @@ object frmCadFilial: TfrmCadFilial
       object Panel1: TPanel
         Left = 0
         Top = 0
-        Width = 834
+        Width = 842
         Height = 35
         Align = alTop
         Color = 8404992
@@ -697,12 +698,12 @@ object frmCadFilial: TfrmCadFilial
       object RzPageControl2: TRzPageControl
         Left = 0
         Top = 35
-        Width = 834
-        Height = 532
-        ActivePage = TS_SPED
+        Width = 842
+        Height = 540
+        ActivePage = TS_Dados
         ActivePageDefault = TS_Dados
         Align = alClient
-        TabIndex = 1
+        TabIndex = 0
         TabOrder = 1
         FixedDimension = 19
         object TS_Dados: TRzTabSheet

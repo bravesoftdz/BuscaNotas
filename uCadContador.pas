@@ -23,10 +23,8 @@ type
     TS_Dados: TRzTabSheet;
     Label1: TLabel;
     Label8: TLabel;
-    Label3: TLabel;
     DBEdit7: TDBEdit;
     DBEdit4: TDBEdit;
-    DBEdit2: TDBEdit;
     btnInserir: TNxButton;
     btnExcluir: TNxButton;
     btnPesquisar: TNxButton;
@@ -34,6 +32,10 @@ type
     btnAlterar: TNxButton;
     btnConfirmar: TNxButton;
     btnCancelar: TNxButton;
+    Label10: TLabel;
+    RxDBComboBox1: TRxDBComboBox;
+    Label9: TLabel;
+    DBEdit6: TDBEdit;
     procedure FormClose(Sender: TObject; var Action: TCloseAction);
     procedure btnExcluirClick(Sender: TObject);
     procedure FormShow(Sender: TObject);
@@ -44,12 +46,14 @@ type
     procedure btnConfirmarClick(Sender: TObject);
     procedure FormDestroy(Sender: TObject);
     procedure btnInserirClick(Sender: TObject);
-    procedure DBEdit2Exit(Sender: TObject);
     procedure FormCloseQuery(Sender: TObject; var CanClose: Boolean);
     procedure Edit4KeyDown(Sender: TObject; var Key: Word; Shift: TShiftState);
     procedure RxDBComboBox8Change(Sender: TObject);
     procedure RzPageControl1Change(Sender: TObject);
     procedure btnPesquisarClick(Sender: TObject);
+    procedure RxDBComboBox1Exit(Sender: TObject);
+    procedure DBEdit6Enter(Sender: TObject);
+    procedure DBEdit6Exit(Sender: TObject);
   private
     { Private declarations }
     fDMCadContador: TDMCadContador;
@@ -183,33 +187,6 @@ begin
   prc_Inserir_Registro;
 end;
 
-procedure TfrmCadContador.DBEdit2Exit(Sender: TObject);
-var
-  vNomeAux: String;
-  vAux: String;
-begin
-  vAux := Monta_Numero(DBEdit2.Text,0);
-  if (trim(vAux) = '') or (copy(vAux,1,9) = '000000000') then
-    exit;
-  if not ValidaCPF(DBEdit2.Text) then
-  begin
-    ShowMessage('CPF incorreto!');
-    fDMCadContador.cdsContadorCPF.Clear;
-    DBEdit2.SetFocus;
-  end;
-
-  if not(fDMCadContador.cdsContadorCPF.IsNull) then
-  begin
-    vNomeAux := VerificaDuplicidade(DBEdit2.Text,'F',fDMCadContador.cdsContadorID.AsInteger);
-    if trim(vNomeAux) <> '' then
-    begin
-      ShowMessage('CPF já utilizado para ' + vNomeAux + '!');
-      fDMCadContador.cdsContadorCPF.Clear;
-      DBEdit2.SetFocus;
-    end;
-  end;
-end;
-
 procedure TfrmCadContador.FormCloseQuery(Sender: TObject;
   var CanClose: Boolean);
 begin
@@ -258,6 +235,52 @@ begin
   TS_Consulta.TabEnabled      := not(TS_Consulta.TabEnabled);
   btnConfirmar.Enabled        := not(btnConfirmar.Enabled);
   btnAlterar.Enabled          := not(btnAlterar.Enabled);
+end;
+
+procedure TfrmCadContador.RxDBComboBox1Exit(Sender: TObject);
+begin
+  if RxDBComboBox1.ItemIndex = 0 then
+    fDMCadContador.cdsContadorCPF.EditMask := '00.000.000/0000-00'
+  else if RxDBComboBox1.ItemIndex = 1 then
+    fDMCadContador.cdsContadorCPF.EditMask := '000.000.000-00'
+  else if RxDBComboBox1.ItemIndex = 2 then
+    fDMCadContador.cdsContadorCPF.EditMask := '';
+end;
+
+procedure TfrmCadContador.DBEdit6Enter(Sender: TObject);
+begin
+  if fDMCadContador.cdsContadorPESSOA.AsString = 'J' then
+    fDMCadContador.cdsContadorCPF.EditMask := '00.000.000/0000-00'
+  else if fDMCadContador.cdsContadorPESSOA.AsString = 'F' then
+    fDMCadContador.cdsContadorCPF.EditMask := '000.000.000-00';
+end;
+
+procedure TfrmCadContador.DBEdit6Exit(Sender: TObject);
+var
+  vNomeAux: string;
+  vAux: string;
+begin
+  vAux := Monta_Numero(DBEdit6.Text, 0);
+  if (trim(vAux) = '') or (copy(vAux, 1, 9) = '000000000') then
+    exit;
+  if fDMCadContador.cdsContadorPESSOA.AsString = 'J' then
+  begin
+    if not ValidaCNPJ(DBEdit6.Text) then
+    begin
+      ShowMessage('CNPJ incorreto!');
+      fDMCadContador.cdsContadorCPF.Clear;
+      DBEdit6.SetFocus;
+    end;
+  end
+  else if fDMCadContador.cdsContadorPESSOA.AsString = 'F' then
+  begin
+    if not ValidaCPF(DBEdit6.Text) then
+    begin
+      ShowMessage('CPF incorreto!');
+      fDMCadContador.cdsContadorCPF.Clear;
+      DBEdit6.SetFocus;
+    end;
+  end;
 end;
 
 end.

@@ -13,9 +13,11 @@ type
     dsContador: TDataSource;
     sdsContadorID: TIntegerField;
     sdsContadorNOME: TStringField;
-    sdsContadorCPF: TStringField;
     cdsContadorID: TIntegerField;
     cdsContadorNOME: TStringField;
+    sdsContadorPESSOA: TStringField;
+    sdsContadorCPF: TStringField;
+    cdsContadorPESSOA: TStringField;
     cdsContadorCPF: TStringField;
     procedure DataModuleCreate(Sender: TObject);
     procedure dspContadorUpdateError(Sender: TObject;

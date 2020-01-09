@@ -3,7 +3,7 @@ object frmConsultaNotas: TfrmConsultaNotas
   Top = 92
   Width = 1030
   Height = 345
-  Caption = 'Busca Notas na Receita    (Vers'#227'o 1.0.11   08/01/2020)'
+  Caption = 'Busca Notas na Receita    (Vers'#227'o 1.0.12   09/01/2020)'
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
@@ -87,9 +87,9 @@ object frmConsultaNotas: TfrmConsultaNotas
     object Label36: TLabel
       Left = 8
       Top = 5
-      Width = 69
+      Width = 101
       Height = 13
-      Caption = 'CPF Contador:'
+      Caption = 'CPF/CNPJ Contador:'
       Transparent = True
     end
     object Label39: TLabel

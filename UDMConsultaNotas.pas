@@ -12,7 +12,6 @@ type
     cdsContador: TClientDataSet;
     cdsContadorID: TIntegerField;
     cdsContadorNOME: TStringField;
-    cdsContadorCPF: TStringField;
     dsContador: TDataSource;
     qFilial: TSQLQuery;
     qFilialID: TIntegerField;
@@ -26,6 +25,8 @@ type
     qParametrosTIPOLOGONFE: TStringField;
     qParametrosAJUSTELOGONFEAUTOMATICO: TStringField;
     qParametrosLOCALNFECONFIG: TStringField;
+    cdsContadorCPF: TStringField;
+    cdsContadorPESSOA: TStringField;
     procedure DataModuleCreate(Sender: TObject);
   private
     { Private declarations }

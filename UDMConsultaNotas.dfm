@@ -24,7 +24,7 @@ object DMConsultaNotas: TDMConsultaNotas
     Aggregates = <>
     Params = <>
     ProviderName = 'dspContador'
-    Left = 152
+    Left = 153
     Top = 32
     object cdsContadorID: TIntegerField
       FieldName = 'ID'
@@ -36,7 +36,11 @@ object DMConsultaNotas: TDMConsultaNotas
     end
     object cdsContadorCPF: TStringField
       FieldName = 'CPF'
-      Size = 14
+      Size = 18
+    end
+    object cdsContadorPESSOA: TStringField
+      FieldName = 'PESSOA'
+      Size = 1
     end
   end
   object dsContador: TDataSource
