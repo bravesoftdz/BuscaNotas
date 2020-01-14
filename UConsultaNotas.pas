@@ -88,12 +88,13 @@ begin
 
   vAux := Monta_Numero(edtCNPJContabil.Text,0);
   if (vAux <> '40372766072') and (vAux <> '94705836049') and (vAux <> '25527096053')
-  and (vAux <> '47698594068') and (vAux <> '38938588068') and (vAux <> '81428650091')
-  and (vAux <> '40941345068') and (vAux <> '25024337034') and (vAux <> '99310031620')
-  and (vAux <> '61670812049') and (vAux <> '39379230044') and (vAux <> '59239972072')
-  and (vAux <> '20584067020') and (vAux <> '58575375091') and (vAux <> '29712165000')
-  and (vAux <> '09312127000110') and (vAux <> '26873010006') and (vAux <> '94247358049')
-  and (vAux <> '40136051049') and (vAux <> '39206041053') then
+   and (vAux <> '47698594068') and (vAux <> '38938588068') and (vAux <> '81428650091')
+   and (vAux <> '40941345068') and (vAux <> '25024337034') and (vAux <> '99310031620')
+   and (vAux <> '61670812049') and (vAux <> '39379230044') and (vAux <> '59239972072')
+   and (vAux <> '20584067020') and (vAux <> '58575375091') and (vAux <> '29712165000')
+   and (vAux <> '26873010006') and (vAux <> '94247358049') and (vAux <> '40136051049')
+   and (vAux <> '39206041053') and (vAux <> '54560306087') and (vAux <> '45154236068')
+   and (vAux <> '25726900049') and (vAux <> '33845999004') then
   begin
     ShowMessage('CPF não entrontrado, favor entrar em contato com a Servisoft pelo fone 51-3598-6584!');
     exit;
@@ -356,8 +357,9 @@ begin
    and (vAux <> '40941345068') and (vAux <> '25024337034') and (vAux <> '99310031620')
    and (vAux <> '61670812049') and (vAux <> '39379230044') and (vAux <> '59239972072')
    and (vAux <> '20584067020') and (vAux <> '58575375091') and (vAux <> '29712165000')
-   and (vAux <> '09312127000110') and (vAux <> '26873010006') and (vAux <> '94247358049')
-   and (vAux <> '40136051049') and (vAux <> '39206041053') then
+   and (vAux <> '26873010006') and (vAux <> '94247358049') and (vAux <> '40136051049')
+   and (vAux <> '39206041053') and (vAux <> '54560306087') and (vAux <> '45154236068')
+   and (vAux <> '25726900049') and (vAux <> '33845999004') then
   begin
     ShowMessage('CPF não encontrado, favor entrar em contato com a Servisoft pelo fone 51-3598-6584!');
     edtCNPJContabil.Clear;
