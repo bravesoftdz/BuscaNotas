@@ -1,6 +1,6 @@
 object frmConsultaNotas: TfrmConsultaNotas
-  Left = 211
-  Top = 92
+  Left = 216
+  Top = 82
   Width = 1030
   Height = 345
   Caption = 'Busca Notas na Receita    (Vers'#227'o 1.0.22  20/03/2020)'
