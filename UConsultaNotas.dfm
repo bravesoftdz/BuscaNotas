@@ -3,7 +3,7 @@ object frmConsultaNotas: TfrmConsultaNotas
   Top = 82
   Width = 1030
   Height = 345
-  Caption = 'Busca Notas na Receita    (Vers'#227'o 1.0.23  15/05/2020'
+  Caption = 'Busca Notas na Receita    (Vers'#227'o 1.0.24  15/05/2020'
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText

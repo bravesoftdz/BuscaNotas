@@ -127,8 +127,8 @@ begin
   memStream := TMemoryStream.Create;
   try
     NFeIntegracaoContab(vLocalNFeConfig,
-                        //Monta_Numero(edtCNPJContabil.Text,0),
-                        Monta_Numero(edtCNPJBaixarXML.Text,0),
+                        Monta_Numero(edtCNPJContabil.Text,0),
+                        //Monta_Numero(edtCNPJBaixarXML.Text,0),
                         Monta_Numero(edtCNPJBaixarXML.Text,0),
                         vModelo,
                         1,
